@@ -1,0 +1,15 @@
+# Gradle
+.gradle/
+build/
+
+# Java
+*.class
+
+# IDEs
+.idea/
+*.iml
+
+# Obsidian
+docs/.obsidian/*
+!docs/.obsidian/core-plugins.json
+!docs/.obsidian/community-plugins.json
