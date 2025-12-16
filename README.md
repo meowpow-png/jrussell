@@ -1,1 +1,11 @@
-JRussell is an oddly opinionated and structurally flexible lightweight Java library for executing tasks in test environment. It allows you to wrap `Runnable` or `Callable` tasks and run them sequentially or concurrently, with built-in support for task decorations like timeouts and delays. The fluent API simplifies task configuration, error handling, and result tracking, making it ideal for testing scenarios without adding unnecessary complexity.
+JRussell is a lightweight Java library for executing tasks in test environment.
+
+It lets you wrap executable tasks and run them either sequentially or concurrently,
+with built-in support for task configuration, decoration, and result inspection.
+
+## Highlights
+
+- Plain POJO library with no framework dependencies.
+- Behaviorally opinionated, structurally flexible.
+- Small, stable core with zero platform ambitions.
+- No scheduling, no persistence, no nonsense.
