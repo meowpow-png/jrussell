@@ -1,4 +1,4 @@
-package com.senthora.jrussell.task;
+package com.senthora.jrussell.internal;
 
 import com.senthora.jrussell.api.TestTaskDecorator;
 
