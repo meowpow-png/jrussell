@@ -6,7 +6,8 @@ build/
 *.class
 
 # IDEs
-.idea/
+.idea/*
+!.idea/runConfigurations/
 *.iml
 
 # Obsidian
