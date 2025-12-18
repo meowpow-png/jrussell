@@ -52,16 +52,6 @@ JRussell does not assign any special meaning to short-circuited execution. When 
 
 ## Decorator API
 
-<!--
-- Decorators are applied **eagerly**
-- Decorator order is **significant and user-defined**
-- No automatic reordering or normalization
--->
-
-
-
-
-
 ### Creating Decorators
 
 Users may use built-in decorators or implement their own. JRussell does not distinguish between built-in and custom decorators. A decorator is recognized as such only if it implements the `TestTaskDecorator` interface.
