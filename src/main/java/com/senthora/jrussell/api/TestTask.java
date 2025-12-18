@@ -1,5 +1,7 @@
 package com.senthora.jrussell.api;
 
+import com.senthora.jrussell.internal.TaskDefinition;
+
 /**
  * This interface represents a named unit of work,
  * exposing a stable identity that allows tasks
@@ -9,7 +11,7 @@ package com.senthora.jrussell.api;
  * @see TestTasks
  * @see TestTaskResult
  */
-public interface TestTask {
+public sealed interface TestTask permits TaskDefinition {
 
     /**
      * Returns the identifier associated with this task.
