@@ -18,7 +18,7 @@ import java.util.concurrent.Callable;
  * or be aware of execution policies such
  * as timing,threading, or execution count.
  *
- * @see TestTaskBuilder
+ * @see TestTaskBuilderImpl
  */
 public final class TaskDefinition<T> implements TestTask {
 
