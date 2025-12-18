@@ -126,7 +126,7 @@ public final class TestTasks {
          *
          * @see #runnable(Runnable)
          */
-        public <T> TestTaskBuilderImpl<T> callable(Callable<T> task) {
+        public <T> TestTaskBuilder<T> callable(Callable<T> task) {
             return new TestTaskBuilderImpl<>(id, task);
         }
 
@@ -141,7 +141,7 @@ public final class TestTasks {
          *
          * @see #callable(Callable)
          */
-        public TestTaskBuilderImpl<Void> runnable(Runnable runnable) {
+        public TestTaskBuilder<Void> runnable(Runnable runnable) {
             return new TestTaskBuilderImpl<>(id, () -> {
                 runnable.run();
                 return null;
