@@ -99,7 +99,13 @@ public final class TestTasks {
      *     <li>Reuse an {@code IdentitySelector} only when multiple tasks
      *     are intended to share the same logical task identity.</li>
      * </ul>
+     *
+     * @implNote
+     * This class wires public task definitions to internal
+     * builders to centralize decorator composition and
+     * enforce immutability after build.
      */
+    @UsesInternal
     public static final class IdentitySelector {
 
         private static final AtomicLong SEQ = new AtomicLong();
