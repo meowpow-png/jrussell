@@ -13,14 +13,12 @@ import java.util.concurrent.Callable;
  * making it easier to model simple timing relationships between
  * tasks in concurrent tests without introducing complex
  * scheduling or runner-level coordination.
- * <p>
  * <h3>Internal Guarantees</h3>
  * <ul>
  *     <li>Delays task execution without altering task logic.</li>
  *     <li>Applies the delay directly to tasks, independent of runner scheduling.</li>
  *     <li>Interruption during delay aborts execution before the task is invoked.</li>
  * </ul>
- * <p>
  * <h3>Operational Notes</h3>
  * <ul>
  *     <li>The delay is implemented as a blocking pause on the task execution
@@ -32,7 +30,6 @@ import java.util.concurrent.Callable;
  *     <li>The delay does not provide precise timing guarantees;
  *     actual start time may vary due to thread scheduling and system load.</li>
  * </ul>
- * <p>
  * <h3>Usage Guidelines</h3>
  * <ul>
  *     <li>Use this decorator to start a task later than others,

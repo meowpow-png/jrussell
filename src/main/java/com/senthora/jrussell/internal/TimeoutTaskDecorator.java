@@ -12,7 +12,6 @@ import java.util.concurrent.*;
  * This decorator is intended for use when tasks are executed concurrently,
  * as the runner cannot independently monitor and enforce timeouts
  * for multiple tasks executing in parallel.
- * <p>
  * <h3>Internal Guarantees</h3>
  * <ul>
  *     <li>Executes each decorated task in its own dedicated executor.</li>
@@ -20,7 +19,6 @@ import java.util.concurrent.*;
  *     <li>Cancels the underlying task when a timeout or interruption occurs.</li>
  *     <li>Preserves and propagates thread interruption, task-thrown exceptions and system errors.</li>
  * </ul>
- * <p>
  * <h3>Operational Notes</h3>
  * <ul>
  *     <li>The timeout applies to a single task invocation only and does not
@@ -30,7 +28,6 @@ import java.util.concurrent.*;
  *     <li>The timeout countdown begins when the task is submitted for execution,
  *     not necessarily when the task first begins running.</li>
  * </ul>
- * <p>
  * <h3>Usage Guidelines</h3>
  * <ul>
  *     <li>Ensure decorated tasks terminate promptly when interrupted;

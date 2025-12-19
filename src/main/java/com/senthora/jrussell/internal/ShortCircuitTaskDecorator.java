@@ -11,7 +11,6 @@ import java.util.function.BooleanSupplier;
  * <p>
  * This decorator is intended to be used as a simple execution-time
  * gate that conditionally prevents a task from being executed.
- * <p>
  * <h3>Internal Guarantees</h3>
  * <ul>
  *     <li>The short-circuit condition is evaluated at execution time.</li>
@@ -19,7 +18,6 @@ import java.util.function.BooleanSupplier;
  *     <li>The task is not invoked when the condition evaluates to {@code true}.</li>
  *     <li>The decorator maintains no internal state.</li>
  * </ul>
- * <p>
  * <h3>Usage Guidelines</h3>
  * <ul>
  *     <li>Ensure the supplied condition is fast and side-effect free

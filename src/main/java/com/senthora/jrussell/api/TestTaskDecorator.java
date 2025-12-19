@@ -7,7 +7,6 @@ import java.util.concurrent.Callable;
  * <p>
  * It exists to let execution behavior be composed explicitly at build time,
  * keeping tasks simple and execution control outside of task code.
- * <p>
  * <h3>API Guarantees</h3>
  * <ul>
  *     <li>The original task is not <i>executed</i> during decoration.</li>
@@ -17,7 +16,6 @@ import java.util.concurrent.Callable;
  * Callers must not assume when or how often a task executes, whether execution
  * is synchronous, or which thread executes the task. Nothing about execution
  * should be assumed beyond “it happens when the returned callable is invoked.”
- * <p>
  * <h3>Implementation Guidelines</h3>
  * <ul>
  *     <li>Decorators should control whether, when, or how the supplied task runs,

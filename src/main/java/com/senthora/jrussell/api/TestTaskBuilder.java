@@ -14,7 +14,6 @@ import java.util.function.BooleanSupplier;
  * The builder provides no way to observe, inspect, or modify the
  * internal task or decorator state. Callers cannot determine which
  * decorators were applied or how they are represented.
- * <p>
  * <h3>API Guarantees</h3>
  * <ul>
  *     <li>All chaining methods contribute to a single task definition.</li>
@@ -24,7 +23,6 @@ import java.util.function.BooleanSupplier;
  *     <li>Decorators are eagerly applied to the underlying task.</li>
  *     <li>Each builder instance may be used to build at most one task.</li>
  * </ul>
- * <p>
  * <h3>Usage Guidelines</h3>
  * <ul>
  *     <li>Avoid sharing builders across threads. Builders are mutable

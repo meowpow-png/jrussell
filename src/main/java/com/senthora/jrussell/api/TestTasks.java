@@ -11,7 +11,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * <p>
  * This class is used to select a task identity and
  * create task builders without executing any task logic.
- * <p>
  * <h3>API Guarantees</h3>
  * <ul>
  *     <li>No task logic is executed by any method in this class.</li>
@@ -84,7 +83,6 @@ public final class TestTasks {
      * It acts as a factory for task builders that share the
      * same identity, binding stable task identifiers before
      * any executable logic or execution behavior is defined.
-     * <p>
      * <h3>API Guarantees</h3>
      * <ul>
      *     <li>Each instance represents exactly one task identifier.</li>
