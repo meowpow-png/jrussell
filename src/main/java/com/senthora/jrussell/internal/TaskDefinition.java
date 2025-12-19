@@ -8,10 +8,6 @@ import java.util.concurrent.Callable;
 /**
  * This class represents the internal definition
  * of a named, reusable unit of work.
- * <p>
- * It exists to give executable work a stable identity,
- * allowing the same task to be reused and referenced
- * without inspecting or altering its behavior.
  *
  * @implNote
  * Should not manage lifecycle, contain hooks,

@@ -23,10 +23,7 @@ public sealed interface TestTask permits TaskDefinition {
     /**
      * Returns the identifier associated with this task.
      * <p>
-     * <b>Idempotence:</b><br>
      * Repeated calls return the same value.
-     * <p>
-     * <b>Equality:</b><br>
      * Two task instances with the same id represent the same logical task.
      */
     String id();
