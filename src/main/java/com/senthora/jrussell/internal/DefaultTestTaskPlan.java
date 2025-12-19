@@ -4,7 +4,6 @@ import com.senthora.jrussell.api.TestTask;
 import com.senthora.jrussell.api.TestTaskPlan;
 import org.jetbrains.annotations.Unmodifiable;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -15,13 +14,15 @@ import java.util.List;
  * That is the responsibility of task runners running the plan.
  * It should also not normalize identity or reorder tasks.
  */
-public final class DefaultTestTaskPlan implements TestTaskPlan {
+public record DefaultTestTaskPlan(List<TestTask> tasks) implements TestTaskPlan {
 
-    @Unmodifiable
-    private final List<TestTask> tasks;
-
-    public DefaultTestTaskPlan(Collection<? extends TestTask> tasks) {
-        this.tasks = List.copyOf(tasks);
+    /**
+     * @implNote
+     * If an already immutable list is passed,
+     * it will generally not be copied by {@code List.copyOf}.
+     */
+    public DefaultTestTaskPlan {
+        tasks = List.copyOf(tasks);
     }
 
     @Override

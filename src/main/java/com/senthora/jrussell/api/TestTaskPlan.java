@@ -58,7 +58,7 @@ public interface TestTaskPlan {
      */
     static TestTaskPlan of(Collection<? extends TestTask> tasks) {
         Objects.requireNonNull(tasks, "tasks must not be null");
-        return new DefaultTestTaskPlan(tasks);
+        return new DefaultTestTaskPlan(List.copyOf(tasks));
     }
 
     /**
