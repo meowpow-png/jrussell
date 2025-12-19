@@ -36,7 +36,12 @@ import java.util.Objects;
  * Callers should not assume task thread safety,
  * deterministic execution timing, failure handling
  * or result ordering across concurrent execution.
+ *
+ * @implNote
+ * Uses internal implementations for plan creation.
+ * Not intended for external extension.
  */
+@UsesInternal
 public interface TestTaskPlan {
 
     /**
