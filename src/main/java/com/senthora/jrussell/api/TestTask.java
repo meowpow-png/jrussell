@@ -25,6 +25,8 @@ public sealed interface TestTask permits TaskDefinition {
      * <p>
      * Repeated calls return the same value.
      * Two task instances with the same id represent the same logical task.
+     *
+     * @return id of this task; never {@code null} or empty
      */
     String id();
 }

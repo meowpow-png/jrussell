@@ -50,8 +50,14 @@ public final class TestTasks {
      *
      * @param id task identifier to associate with subsequently built tasks
      * @return a new task identity selector
+     *
+     * @throws NullPointerException if {@code id} is {@code null}
+     * @throws IllegalStateException if {@code id} is an empty String
      */
     public static IdentitySelector named(String id) {
+        if (Objects.requireNonNull(id).isEmpty()) {
+            throw new IllegalArgumentException("Task identity must not be an empty String");
+        }
         return new IdentitySelector(id);
     }
 

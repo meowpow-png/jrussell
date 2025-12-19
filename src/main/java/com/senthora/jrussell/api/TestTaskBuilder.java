@@ -49,7 +49,9 @@ public interface TestTaskBuilder<T> {
      * copied and may carry shared state.
      *
      * @param decorator decorator to apply to the task
-     * @return this builder
+     * @return instance of this builder
+     *
+     * @throws NullPointerException if {@code decorator} is {@code null}
      * @throws IllegalStateException if the task has already been built
      */
     TestTaskBuilder<T> with(TestTaskDecorator decorator);
@@ -61,7 +63,10 @@ public interface TestTaskBuilder<T> {
      * and does not affect the task's internal logic.
      *
      * @param delay duration to wait before task execution
-     * @return this builder
+     * @return instance of this builder
+     *
+     * @throws NullPointerException if {@code delay} is {@code null}
+     * @throws IllegalArgumentException if {@code delay} represents a negative duration
      * @throws IllegalStateException if the task has already been built
      */
     TestTaskBuilder<T> withDelay(Duration delay);
@@ -73,7 +78,10 @@ public interface TestTaskBuilder<T> {
      * and is enforced when the task is executed.
      *
      * @param timeout maximum allowed execution duration
-     * @return this builder
+     * @return instance of this builder
+     *
+     * @throws NullPointerException if {@code timeout} is {@code null}
+     * @throws IllegalArgumentException if {@code timeout} represents a negative duration
      * @throws IllegalStateException if the task has already been built
      */
     TestTaskBuilder<T> withTimeout(Duration timeout);
@@ -85,7 +93,9 @@ public interface TestTaskBuilder<T> {
      * task execution is prevented for that invocation.
      *
      * @param condition condition that determines whether execution is skipped
-     * @return this builder
+     * @return instance of this builder
+     *
+     * @throws NullPointerException if {@code condition} is {@code null}
      * @throws IllegalStateException if the task has already been built
      */
     TestTaskBuilder<T> withShortCircuit(BooleanSupplier condition);

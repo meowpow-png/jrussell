@@ -41,6 +41,9 @@ public final class TestTaskBuilderImpl<T> implements TestTaskBuilder<T> {
     public TestTaskBuilderImpl<T> withDelay(Duration delay) {
         assertTaskNotBuilt();
         Objects.requireNonNull(delay, "delay must not be null");
+        if (delay.isNegative()) {
+            throw new IllegalArgumentException("Delay must not be a negative duration");
+        }
         return add(new DelayTaskDecorator(delay));
     }
 
@@ -48,6 +51,9 @@ public final class TestTaskBuilderImpl<T> implements TestTaskBuilder<T> {
     public TestTaskBuilderImpl<T> withTimeout(Duration timeout) {
         assertTaskNotBuilt();
         Objects.requireNonNull(timeout, "timeout must not be null");
+        if (timeout.isNegative()) {
+            throw new IllegalArgumentException("Timeout must not be a negative duration");
+        }
         return add(new TimeoutTaskDecorator(timeout));
     }
 
