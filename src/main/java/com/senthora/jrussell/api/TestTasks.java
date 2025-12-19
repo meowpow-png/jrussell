@@ -54,7 +54,8 @@ public final class TestTasks {
      * @throws IllegalStateException if {@code id} is an empty String
      */
     public static IdentitySelector named(String id) {
-        if (Objects.requireNonNull(id).isEmpty()) {
+        Objects.requireNonNull(id, "id must not be null");
+        if (id.isEmpty()) {
             throw new IllegalArgumentException("Task identity must not be an empty String");
         }
         return new IdentitySelector(id);
