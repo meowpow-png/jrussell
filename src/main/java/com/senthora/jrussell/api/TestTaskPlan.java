@@ -16,6 +16,8 @@ import java.util.Objects;
  * <ul>
  *     <li>The plan is always immutable. Once created, it cannot be modified.
  *     It preserves task order and exposes tasks in the order they were added.</li>
+ *     <li>Two {@code TestTaskPlan} instances are equal if they contain
+ *     the same tasks, in the same order, as determined by task identity.</li>
  *     <li>The plan is safe to reuse. It may be executed multiple times.
  *     Each execution is independent and produces a new result set.</li>
  *     <li>The plan does not inspect, modify, decorate, or validate
