@@ -9,10 +9,8 @@ import com.senthora.jrussell.internal.TaskDefinition;
  * depending on execution details.
  *
  * @implNote
- * This interface forms a sealed hierarchy that
- * restricts task implementations to an internal type,
- * ensuring that task execution remains library-controlled
- * and cannot be invoked outside task runner.
+ * This sealed interface restricts task
+ * implementations to library-provided types.
  *
  * @see TestTasks
  * @see TestTaskResult
