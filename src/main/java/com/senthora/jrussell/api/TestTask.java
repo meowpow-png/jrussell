@@ -9,7 +9,7 @@ import com.senthora.jrussell.internal.TaskDefinition;
  * depending on execution details.
  *
  * @implNote
- * This sealed interface restricts task
+ * This sealed interface restricts class
  * implementations to library-provided types.
  *
  * @see TestTasks
