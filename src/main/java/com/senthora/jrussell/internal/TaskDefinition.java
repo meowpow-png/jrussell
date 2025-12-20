@@ -6,8 +6,7 @@ import java.util.Objects;
 import java.util.concurrent.Callable;
 
 /**
- * This class represents the internal definition
- * of a named, reusable unit of work.
+ * Default implementation of {@link TestTask}.
  *
  * @implNote
  * Should not manage lifecycle, contain hooks,
