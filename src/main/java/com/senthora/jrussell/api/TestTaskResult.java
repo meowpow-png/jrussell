@@ -1,5 +1,7 @@
 package com.senthora.jrussell.api;
 
+import com.senthora.jrussell.internal.DefaultTestTaskResult;
+
 import java.time.Duration;
 import java.time.Instant;
 
@@ -12,9 +14,13 @@ import java.time.Instant;
  *     <li>This interface has no side effects; accessing values never triggers execution.</li>
  * </ul>
  *
+ * @implNote
+ * Restricts class implementations to library-provided type.
+ *
  * @param <T> the return type of task execution result
  */
-public interface TestTaskResult<T> {
+@UsesInternal
+public sealed interface TestTaskResult<T> permits DefaultTestTaskResult {
 
     /**
      * Returns the {@code TestTask} associated with this result.
