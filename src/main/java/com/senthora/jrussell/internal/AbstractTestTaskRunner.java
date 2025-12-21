@@ -75,7 +75,7 @@ public non-sealed abstract class AbstractTestTaskRunner implements TestTaskRunne
             error = t;
         }
         Instant end = Instant.now();
-        return new TestTaskResultValues<>(task, start, end, error, value);
+        return new DefaultTestTaskResult<>(task, start, end, error, value);
     }
 
     private static final class TaskResolver {
