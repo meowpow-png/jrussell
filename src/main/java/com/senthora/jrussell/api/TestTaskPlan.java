@@ -40,11 +40,10 @@ import java.util.Objects;
  * or result ordering across concurrent execution.
  *
  * @implNote
- * Uses internal implementations for plan creation.
- * Not intended for external extension.
+ * Implementations are sealed to the library.
  */
 @UsesInternal
-public interface TestTaskPlan {
+public sealed interface TestTaskPlan permits DefaultTestTaskPlan {
 
     /**
      * Creates a new {@code TestTaskPlan}
