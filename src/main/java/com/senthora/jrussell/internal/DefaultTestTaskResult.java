@@ -1,6 +1,7 @@
 package com.senthora.jrussell.internal;
 
 import com.senthora.jrussell.api.TestTaskResult;
+import org.jetbrains.annotations.Nullable;
 
 import java.time.*;
 import java.util.Objects;
@@ -12,7 +13,9 @@ public record DefaultTestTaskResult<T>(
         TaskDefinition<T> task,
         Instant startTime,
         Instant endTime,
+        @Nullable
         Throwable error,
+        @Nullable
         T result
 ) implements TestTaskResult<T> {
 
@@ -29,6 +32,16 @@ public record DefaultTestTaskResult<T>(
         if (startTime.isAfter(endTime)) {
             throw new IllegalArgumentException("Start time must not be after end time");
         }
+    }
+
+    @Override
+    public @Nullable Throwable error() {
+        return error;
+    }
+
+    @Override
+    public @Nullable T result() {
+        return result;
     }
 
     @Override
