@@ -155,6 +155,7 @@ public final class TestTasks {
         public TestTaskBuilder<Void> runnable(Runnable runnable) {
             return new TestTaskBuilderImpl<>(id, () -> {
                 runnable.run();
+                //noinspection DataFlowIssue
                 return null;
             });
         }

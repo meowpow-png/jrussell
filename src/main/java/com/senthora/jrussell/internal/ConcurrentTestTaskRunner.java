@@ -99,6 +99,7 @@ public final class ConcurrentTestTaskRunner extends AbstractTestTaskRunner {
                 }
             }
         }
+        //noinspection ConstantValue
         return Arrays.stream(results)
                 .filter(Objects::nonNull)
                 .toList();
