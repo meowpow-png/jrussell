@@ -11,6 +11,9 @@ import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.function.BooleanSupplier;
 
+/**
+ * Default implementation of {@link TestTaskBuilder}.
+ */
 public final class TestTaskBuilderImpl<T> implements TestTaskBuilder<T> {
 
     private final String id;

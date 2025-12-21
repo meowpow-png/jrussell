@@ -7,13 +7,8 @@ import java.util.function.BooleanSupplier;
  * This interface represents a single-use task definition in progress.
  * <p>
  * It incrementally defines how a {@link TestTask} executes before
- * it is run. The builder represents the definition process, not the
- * task itself. Chaining methods wrap the underlying behavior, accumulating
- * execution effects in call order and applying them when the task is built.
- * <p>
- * The builder provides no way to observe, inspect, or modify the
- * internal task or decorator state. Callers cannot determine which
- * decorators were applied or how they are represented.
+ * it is run. The builder represents task definition, not execution;
+ * chaining methods wrap behavior and apply it when the task is built.
  * <h3>API Guarantees</h3>
  * <ul>
  *     <li>All chaining methods contribute to a single task definition.</li>
@@ -32,6 +27,11 @@ import java.util.function.BooleanSupplier;
  *     <li>Use convenience methods for standard behavior. When using custom decorator
  *     implementations or planning to reuse decorators, prefer {@link #with(TestTaskDecorator)}.</li>
  * </ul>
+ *
+ * @apiNote
+ * The builder provides no way to observe, inspect, or modify
+ * the internal task or decorator state. Callers cannot determine
+ * which decorators were applied or how they are represented.
  *
  * @param <T> result type produced by the built task
  *
