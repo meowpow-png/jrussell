@@ -20,7 +20,7 @@ import java.util.function.BooleanSupplier;
  * </ul>
  * <h3>Usage Guidelines</h3>
  * <ul>
- *     <li>Ensure the supplied condition is fast and side-effect free
+ *     <li>Ensure the supplied condition is fast and side effect free
  *     when used in performance-sensitive or concurrent execution.</li>
  * </ul>
  */
