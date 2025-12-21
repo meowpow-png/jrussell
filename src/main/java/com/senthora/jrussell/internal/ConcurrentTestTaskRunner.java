@@ -14,6 +14,8 @@ import java.util.concurrent.*;
  * <ul>
  *     <li>All tasks are submitted to the underlying executor eagerly at the start of execution.
  *     Task submission is not deferred or conditional on the completion of other tasks.</li>
+ *     <li>If task submission to the underlying executor is rejected,
+ *     execution aborts immediately and a runner-level exception is thrown.</li>
  *     <li>When execution terminates early, results include only tasks that completed
  *     before termination. Cancelled or incomplete tasks do not produce results.</li>
  *     <li>If the executing thread is interrupted while awaiting task completion,
